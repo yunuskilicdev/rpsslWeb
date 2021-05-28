@@ -17,6 +17,7 @@ func ChoicesHandler(w http.ResponseWriter, r *http.Request) {
 
 func ChoiceHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	mod := GetRandomIndex()
 	w.WriteHeader(http.StatusOK)
 	if err := json.NewEncoder(w).Encode(choices[mod]); err != nil {
@@ -39,6 +40,7 @@ func GetRandomIndex() int {
 
 func PlayHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	var playRequest PlayRequest
 	err := json.NewDecoder(r.Body).Decode(&playRequest)
 	if err != nil  {
