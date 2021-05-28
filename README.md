@@ -11,3 +11,5 @@ I used only mux for router
 **Endpoint**
 
 https://rpssl-web.herokuapp.com
+
+You can use above url at https://codechallenge.boohma.com/
